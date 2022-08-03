@@ -1,0 +1,27 @@
+{
+	"name": "tailwind-to-css",
+	"version": "0.0.1",
+	"description": "generates a style tag with the generated tailwind classes within",
+	"main": "index.js",
+	"type": "module",
+	"module": "index.js",
+	"exports": {
+		".": "./index.js"
+	},
+	"license": "MIT",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kromate/tailwind-to-css.git"
+	},
+	"author": "kromate",
+	"bugs": {
+		"url": "https://github.com/kromate/tailwind-to-css/issues"
+	},
+	"homepage": "https://github.com/kromate/tailwind-to-css#readme"
+}
