@@ -17,50 +17,59 @@ const generateHTML = (HTMLString) =>
 
 export const createStyle = (HTML_STRING, withDefault = true) =>
 {
-    let access;
-    if (typeof window !== 'undefined') {
+    return new Promise((resolve, reject) =>
+    {
+        var access;
+        if (typeof window !== 'undefined') {
 
-        var i_frame = document.createElement('iframe');
-        i_frame.setAttribute('sandbox', 'allow-scripts allow-same-origin');
-        i_frame.setAttribute('id', 'tailwindToCssIframe');
-        i_frame.setAttribute(
-            'style',
-            'width:0px !important; height:0px !important; opacity:0 !important; display:none;'
-        );
-        i_frame.srcdoc = generateHTML(HTML_STRING);
+            var i_frame = document.createElement('iframe');
+            i_frame.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+            i_frame.setAttribute('id', 'tailwindToCssIframe');
+            i_frame.setAttribute(
+                'style',
+                'width:0px !important; height:0px !important; opacity:0 !important; display:none;'
+            );
+            i_frame.srcdoc = generateHTML(HTML_STRING);
 
-        document.body.appendChild(i_frame);
-        document
-            .querySelector('#tailwindToCssIframe')
-            .addEventListener('load', function (e)
-            {
+            document.body.appendChild(i_frame);
+            document
+                .querySelector('#tailwindToCssIframe')
+                .addEventListener('load', async function (e)
+                {
 
-                const inserted_i_frame = this;
-                const i_frame_document = inserted_i_frame?.contentWindow?.document;
-                const style = i_frame_document.querySelector('style');
-                const rawStyleWithDefault = style.outerHTML;
-                const rawStyleWithoutDefault = style.outerHTML.replace(DEFAULT_STYLE, '');
-                if (withDefault) {
+                    const inserted_i_frame = this;
+                    const i_frame_document = inserted_i_frame?.contentWindow?.document;
+                    const style = i_frame_document.querySelector('style');
+                    const rawStyleWithDefault = style.outerHTML;
+                    const rawStyleWithoutDefault = style.outerHTML.replace(DEFAULT_STYLE, '');
+                    if (withDefault) {
+                        access = rawStyleWithDefault
+                        resolve(access)
+                        // return access
+                    } else {
+                        access = rawStyleWithoutDefault
+                        resolve(access)
+                        // return access
+                    }
+                });
+        } else {
+            reject(new Error(`No Document Object Found`))
 
-                    // access = rawStyleWithDefault
-                } else {
-                    console.log(rawStyleWithoutDefault);
-                    // access = rawStyleWithoutDefault
-                }
-            });
-    } else {
-        throw `No Document Object Found`
-    }
-    return access
+
+        }
+    })
 };
 
 const sty = createStyle(`  <div class="p-2 text-4xl font-bold">
         Hello World
 
         <span class="underline text-orange-500">Yess</span>
-    </div>`, false)
+    </div>`, false).then((data) =>
+{
+    console.log(data);
+})
 
-console.log(sty);
+
 
 const addToWindow = () => window.createStyle = createStyle
 
