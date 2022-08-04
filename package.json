@@ -1,6 +1,6 @@
 {
 	"name": "tailwind-to-css",
-	"version": "0.0.1",
+	"version": "0.0.11",
 	"description": "generates a style tag with the generated tailwind classes within",
 	"main": "index.js",
 	"type": "module",
