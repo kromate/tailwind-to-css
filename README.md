@@ -1,2 +1,4 @@
 # tailwind-to-css
-generate vanilla css styles from your tailwind classes
+
+### Intro
+generate vanilla css styles from your html tailwind classes

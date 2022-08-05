@@ -21,7 +21,6 @@ export const createStyle = (HTML_STRING, withDefault = true) =>
 {
     return new Promise((resolve, reject) =>
     {
-        var access;
         if (typeof window !== 'undefined') {
 
             var i_frame = document.createElement('iframe');
@@ -44,13 +43,9 @@ export const createStyle = (HTML_STRING, withDefault = true) =>
                     const rawStyleWithDefault = style.outerHTML;
                     const rawStyleWithoutDefault = style.outerHTML.replace(DEFAULT_STYLE, '');
                     if (withDefault) {
-                        access = rawStyleWithDefault
-                        resolve(access)
-                        // return access
+                        resolve(rawStyleWithDefault)
                     } else {
-                        access = rawStyleWithoutDefault
-                        resolve(access)
-                        // return access
+                        resolve(rawStyleWithoutDefault)
                     }
                 });
         } else {
@@ -60,16 +55,6 @@ export const createStyle = (HTML_STRING, withDefault = true) =>
         }
     })
 };
-
-const sty = createStyle(`  <div class="p-2 text-4xl font-bold">
-        Hello World
-
-        <span class="underline text-orange-500">Yess</span>
-    </div>`, false).then((data) =>
-{
-    console.log(data);
-})
-
 
 
 const addToWindow = () => window.createStyle = createStyle
