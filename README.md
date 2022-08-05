@@ -35,3 +35,8 @@ The <b>createStyle</b> function takes in two parameters
 ```js
 createStyle(HTML_STRING, withDefault)
 ```
+
+| Syntax      | Description | 
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
