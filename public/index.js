@@ -56,6 +56,16 @@ export const createStyle = (HTML_STRING, withDefault = true) =>
     })
 };
 
+createStyle(`  <div class="p-2 text-4xl font-bold">
+        Hello World
+
+        <span class="underline text-orange-500">Yess</span>
+    </div>`, false).then((data) =>
+{
+    console.log(data);
+})
+
+
 
 const addToWindow = () => window.createStyle = createStyle
 
