@@ -35,8 +35,11 @@ The <b>createStyle</b> function takes in two parameters
 ```js
 createStyle(HTML_STRING, withDefault)
 ```
+withDefault :- This is should be false if you do not want the default tailwindcss styles return
 
-| Syntax      | Description | 
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Option      | Default     | Required   |
+| ----------- | ----------- | ---------- |
+| HTML_STRING | undefined   | true       |
+| withDefault | true        | false      |
+
+
