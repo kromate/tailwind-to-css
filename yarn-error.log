@@ -1,0 +1,55 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add snowpack -D
+
+PATH: 
+  /Users/kromate/.bun/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kromate/Library/Android/Sdk/emulator:/Users/kromate/Library/Android/Sdk/tools:/Library/Apple/usr/bin:/Users/kromate/.bun/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/snowpack: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:141543:19)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+  	"name": "tailwind-to-css",
+  	"version": "0.0.2",
+  	"description": "generates a style tag with the generated tailwind classes within",
+  	"main": "public/index.js",
+  	"type": "module",
+  	"module": "public/index.js",
+  	"exports": {
+  		".": "./public/index.js"
+  	},
+  	"license": "MIT",
+  	"files": [
+  		"dist"
+  	],
+  	"scripts": {
+  		"test": "echo \"Error: no test specified\" && exit 1"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "git+https://github.com/kromate/tailwind-to-css.git"
+  	},
+  	"author": "kromate",
+  	"bugs": {
+  		"url": "https://github.com/kromate/tailwind-to-css/issues"
+  	},
+  	"homepage": "https://github.com/kromate/tailwind-to-css#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

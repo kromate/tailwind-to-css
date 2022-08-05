@@ -13,7 +13,8 @@
 		"dist"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "snowpack dev",
+		"build": "snowpack build"
 	},
 	"repository": {
 		"type": "git",
@@ -23,5 +24,8 @@
 	"bugs": {
 		"url": "https://github.com/kromate/tailwind-to-css/issues"
 	},
-	"homepage": "https://github.com/kromate/tailwind-to-css#readme"
+	"homepage": "https://github.com/kromate/tailwind-to-css#readme",
+	"devDependencies": {
+		"snowpack": "^3.8.8"
+	}
 }
