@@ -27,5 +27,11 @@ createStyle(`
 })
 
 // Output
-console --> '<style>.p-2{padding:0.5rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}</style>'
+// console --> '<style>.p-2{padding:0.5rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}</style>'
+```
+
+### Options
+The <b>createStyle</b> function takes in two parameters
+```js
+createStyle(HTML_STRING, withDefault)
 ```
