@@ -7,7 +7,7 @@ const generateHTML = (HTMLString) =>
          <script>
          window.tw = ${tailwind}
          </script>
-       
+       <script>window.tw()</script>
         </head>
         <body >
     
@@ -32,7 +32,6 @@ export const createStyle = (HTML_STRING, withDefault = true) =>
                 'width:0px !important; height:0px !important; opacity:0 !important; display:none;'
             );
             i_frame.srcdoc = generateHTML(HTML_STRING);
-
             document.body.appendChild(i_frame);
             document
                 .querySelector('#tailwindToCssIframe')
